@@ -12,9 +12,9 @@ n = input('Введіть нове значення \n')
 for i in lst:
     i = list(i)
     if not i:
-        i.append(n)
+        i = tuple(i)
     else:
         i[-1] = n
         i = tuple(i)
     result.append(i)
-print(result)    
+print(result)
