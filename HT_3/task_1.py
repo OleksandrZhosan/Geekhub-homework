@@ -11,7 +11,7 @@ result = []
 n = input('Введіть нове значення \n')
 for i in lst:
     i = list(i)
-    if len(i) == 0:
+    if not i:
         i.append(n)
     else:
         i[-1] = n

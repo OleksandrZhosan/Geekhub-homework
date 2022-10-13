@@ -9,9 +9,8 @@ n_1, n_2 = map(int, input('Введіть 2 числа через пробіл \
 
 for i in range(n_1, n_2 + 1):
     leap = False
-    if i % 4 == 0 or i % 400 == 0:
-        leap = True
-    if i % 100 == 0 and i % 400 != 0:
-        leap = False   
+    if i % 4 == 0:
+        if i % 100 != 0 or (i % 100 == 0 and i % 400 == 0):
+            leap = True
     if leap:
         print(i)
