@@ -10,10 +10,8 @@ lst = [(1, 2), (3,), (5, 6, 7), ()]
 result = []
 n = input('Введіть нове значення \n')
 for i in lst:
-    i = list(i)
-    if not i:
-        i = tuple(i)
-    else:
+    if i:
+        i = list(i)
         i[-1] = n
         i = tuple(i)
     result.append(i)
