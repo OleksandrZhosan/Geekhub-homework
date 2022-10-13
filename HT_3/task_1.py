@@ -5,12 +5,16 @@ The "replacement" value is entered by user.
 The number of elements in the tuples must be different.
 """
 
-lst = [(1, 2), (3, 4), (5, 6, 7)]
+lst = [(1, 2), (3,), (5, 6, 7), ()]
 
 result = []
+n = input('Введіть нове значення \n')
 for i in lst:
     i = list(i)
-    i[-1] = 'new_value'
-    i = tuple(i)
+    if len(i) == 0:
+        i.append(n)
+    else:
+        i[-1] = n
+        i = tuple(i)
     result.append(i)
 print(result)    
