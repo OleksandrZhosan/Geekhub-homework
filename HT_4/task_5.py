@@ -62,7 +62,7 @@ try:
     a = int(a)
 except ValueError:
     a = "error_value"
-operation = input('Введіть операцію (+, -, *, **, /, //, %)\n')
+operation = input('Введіть одну з операцій: +, -, *, **, /, //, %\n')
 b = input('Введіть друге число \n')
 try:
     b = int(b)
