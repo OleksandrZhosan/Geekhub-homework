@@ -59,13 +59,14 @@ def func_calc(a, op, b):
 
 a = input('Введіть перше число \n')
 try:
-    a = int(a)
+    a = float(a)
 except ValueError:
     a = "error_value"
 operation = input('Введіть одну з операцій: +, -, *, **, /, //, %\n')
 b = input('Введіть друге число \n')
 try:
-    b = int(b)
+    b = float(b)
 except ValueError:
     b = "error_value"
+    
 print(func_calc(a, operation, b))
