@@ -7,12 +7,15 @@
 import pandas as pd
 
 def counter(lst):
-    lst = pd.Series(lst)
-    result = pd.value_counts(lst)
+    no_true = [i for i in lst if (i is not True)]
+    no_true = pd.Series(no_true)
+    result = pd.value_counts(no_true)
+    num_of_true = (len(lst) - len(no_true))
     
     for index, i in result.iteritems():
         print(f'{index} --> {i}')
+    print(f'True --> {num_of_true}')
 
         
-lst = [1, '1', 'foo', True, [1, 2], 'foo', 1]
+lst = [1, '1', 'foo', True, [1, 2], 'foo', True, 1]
 counter(lst)
