@@ -4,12 +4,15 @@
     Наприклад:
     1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2] ----> "1 -> 3, foo -> 2, [1, 2] -> 2, True -> 1"
 """
+import pandas as pd
 
 def counter(lst):
-    d = {i: lst.count(i) for i in lst}
-    return d
+    lst = pd.Series(lst)
+    result = pd.value_counts(lst)
+    
+    for index, i in result.iteritems():
+        print(f'{index} --> {i}')
 
-lst = [1, 'foo', True, [1, 2], 'foo', 1]
-lst_str = list(map(str, lst))
-print(counter(lst_str))
-
+        
+lst = [1, '1', 'foo', True, [1, 2], 'foo', 1]
+counter(lst)
