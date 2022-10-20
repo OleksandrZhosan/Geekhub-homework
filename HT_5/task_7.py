@@ -16,5 +16,5 @@ def counter(lst):
     print(f'False --> {num_of_false}')
 
         
-lst = [1, '1', 'foo', True, [1, 2], 'foo', True, 1, {1, 2, 3}, (12,), {1: 'one', 2: 'two'}, 0, False, False]
+lst = [1, '1', 2.66, 'foo', True, [1, 2], 'foo', True, 1, {1, 2, 3}, (12,), {1: 'one', 2: 'two'}, 0, False, False]
 counter(lst)
