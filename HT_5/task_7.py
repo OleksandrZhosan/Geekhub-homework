@@ -1,21 +1,20 @@
-"""
-7. Написати функцію, яка приймає на вхід список (через кому), підраховує кількість однакових елементів
-у ньому і виводить результат. Елементами списку можуть бути дані будь-яких типів.
-    Наприклад:
-    1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2] ----> "1 -> 3, foo -> 2, [1, 2] -> 2, True -> 1"
-"""
 import pandas as pd
 
 def counter(lst):
     no_true = [i for i in lst if (i is not True)]
-    no_true = pd.Series(no_true)
-    result = pd.value_counts(no_true)
+    no_false_no_true = [i for i in no_true if (i is not False)]
+    
+    no_false_no_true = pd.Series(no_false_no_true)
+    result = pd.value_counts(no_false_no_true)
+    
     num_of_true = (len(lst) - len(no_true))
+    num_of_false = len(no_true) - len(no_false_no_true) 
     
     for index, i in result.iteritems():
         print(f'{index} --> {i}')
     print(f'True --> {num_of_true}')
+    print(f'False --> {num_of_false}')
 
         
-lst = [1, '1', 'foo', True, [1, 2], 'foo', True, 1]
+lst = [1, '1', 'foo', True, [1, 2], 'foo', True, 1, {1, 2, 3}, (12,), {1: 'one', 2: 'two'}, 0, False, False]
 counter(lst)
