@@ -24,8 +24,8 @@ def has_numbers(string):
     return False
 
 
-symbols = '!@$%^&*()_-+.;'
 def has_symbols(string):
+    symbols = '!@$%^&*()_-+.;'
     for i in string:
         if i in symbols:
             return True
