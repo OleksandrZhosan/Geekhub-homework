@@ -12,7 +12,7 @@
 class LoginException(Exception):
     pass
 
-def login_validation(username, password, silent=False):
+def login_validation(username, password, silent='False'):
     users_data = {
         'login1': 'password1',
         'login2': 'password2',
@@ -24,7 +24,7 @@ def login_validation(username, password, silent=False):
         return True
     elif users_data.get(username) != password and silent == 'True':
         return False
-    elif users_data.get(username) != password and silent == False:
+    elif users_data.get(username) != password and silent == 'False':
         raise LoginException('Помилка входу')
     
 input_data = tuple(input('Введіть логін, пароль, silent через кому та пробіл \n').split(', '))
@@ -34,6 +34,3 @@ try:
     print(login_validation(*input_data))
 except LoginException as error:
     print(f'Статус помилки: {error}')
-    
-
-
