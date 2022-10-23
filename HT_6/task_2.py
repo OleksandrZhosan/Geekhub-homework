@@ -10,23 +10,23 @@
 class LoginException(Exception):
     pass
 
+
+def has_numbers(string):
+    for i in string:
+        if i.isdigit():
+            return True
+    return False
+
+
+symbols = '!@$%^&*()_-+.;'
+def has_symbols(string):
+    for i in string:
+        if i in symbols:
+            return True
+    return False
+
+
 def login_password_validation(username, password):
-    symbols = '!@$%^&*()_-+.;'
-    
-    def has_numbers(string):
-        for i in string:
-            if i.isdigit():
-                return True
-        return False
-
-
-    def has_symbols(string):
-        for i in string:
-            if i in symbols:
-                return True
-        return False
-
-
     if len(username) > 50 or len(username) < 3:
         raise LoginException('Невірна довжина логіна')
     if len(password) < 8 or not has_numbers(password):
@@ -41,6 +41,3 @@ input_data = tuple(input('Введіть логін, пароль через к�
 print(input_data)
 
 print(login_password_validation(*input_data))
-
-
-

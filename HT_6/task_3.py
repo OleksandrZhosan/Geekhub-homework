@@ -16,23 +16,23 @@
 class LoginException(Exception):
     pass
 
+
+def has_numbers(string):
+    for i in string:
+        if i.isdigit():
+            return True
+    return False
+
+
+symbols = '!@$%^&*()_-+.;'
+def has_symbols(string):
+    for i in string:
+        if i in symbols:
+            return True
+    return False
+
+
 def login_password_validation(username, password):
-    symbols = '!@$%^&*()_-+.;'
-    
-    def has_numbers(string):
-        for i in string:
-            if i.isdigit():
-                return True
-        return False
-
-
-    def has_symbols(string):
-        for i in string:
-            if i in symbols:
-                return True
-        return False
-
-
     if len(username) > 50 or len(username) < 3:
         raise LoginException('Невірна довжина логіна')
     if len(password) < 8 or not has_numbers(password):
@@ -41,6 +41,7 @@ def login_password_validation(username, password):
         raise LoginException('В паролі має бути хоча б 1 символ зі списку: !@$%^&*()_-+')
     else:
         return 'Чудовий пароль!'
+    
     
 users = [('user1', 'passw'), ('user2', 'password'), ('user3', 'password1'),
          ('user4', 'password2!'), ('user5', 'password3!')]
