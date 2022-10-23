@@ -42,11 +42,5 @@ print(input_data)
 
 print(login_password_validation(*input_data))
 
-# try:
-#     print(login_password_validation(*input_data))
-# except LoginException as error:
-#     print(f'Помилка: {error}')
-    
-
 
 
