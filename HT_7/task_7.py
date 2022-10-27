@@ -10,7 +10,7 @@
 
 
 def list_dif(lst1, lst2):
-    return [i for i in set(lst1) - set(lst2)]
+    return [i for i in lst1 if i not in lst2]
 
 lst1 = [1, 2, 2, 2, 3, 4]
 lst2 = [2]
